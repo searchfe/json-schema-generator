@@ -8,7 +8,7 @@ Spec: http://json-schema.org/latest/json-schema-validation.html
 ## Install
 
 ```bash
-apmjs install --save jsg
+npm install --save jsg07
 ```
 
 ## Usage
