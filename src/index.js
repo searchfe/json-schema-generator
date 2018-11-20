@@ -3,6 +3,7 @@ export const specFor = {
         let keys = Object.keys(data);
         let schema = {
             title: title || 'An object value',
+            description: '',
             required: keys,
             properties: {}
         };
@@ -13,7 +14,8 @@ export const specFor = {
     },
     'array': function (data, {$id}) {
         let schema = {
-            title: 'An array of items'
+            title: 'An array of items',
+            description: ''
         };
         if (data.length) {
             schema.items = spec(data[0], {$id: `${$id}/items`});
@@ -23,6 +25,7 @@ export const specFor = {
     'boolean': function (data) {
         return {
             title: 'A boolean value',
+            description: '',
             default: false,
             examples: [data]
         };
@@ -30,6 +33,7 @@ export const specFor = {
     'integer': function (data) {
         return {
             title: 'An integer value',
+            description: '',
             default: 0,
             examples: [data]
         };
@@ -37,6 +41,7 @@ export const specFor = {
     'string': function (data) {
         return {
             title: 'A string value',
+            description: '',
             default: '',
             pattern: '^(.*)$',
             examples: [data]
