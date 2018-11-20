@@ -16,6 +16,7 @@ describe('infer', function () {
             definitions: {},
             examples: [ false ],
             type: 'boolean',
+            description: '',
             title: 'A boolean value'
         });
     });
@@ -27,12 +28,14 @@ describe('infer', function () {
             definitions: {},
             type: 'object',
             title: 'Harttle Schema',
+            description: '',
             required: ['name', 'age'],
             properties: {
                 name: {
                     $id: '#/properties/name',
                     type: 'string',
                     title: 'A string value',
+                    description: '',
                     pattern: '^(.*)$',
                     examples: ['harttle'],
                     default: ''
@@ -41,6 +44,7 @@ describe('infer', function () {
                     $id: '#/properties/age',
                     type: 'integer',
                     title: 'An integer value',
+                    description: '',
                     default: 0,
                     examples: [16]
                 }
@@ -55,6 +59,7 @@ describe('spec', function () {
             $id: '#/gender',
             type: 'boolean',
             title: 'A boolean value',
+            description: '',
             default: false,
             examples: [false]
         });
@@ -64,6 +69,7 @@ describe('spec', function () {
             $id: '#/name',
             type: 'string',
             title: 'A string value',
+            description: '',
             default: '',
             pattern: '^(.*)$',
             examples: ['harttle']
@@ -74,12 +80,14 @@ describe('spec', function () {
             $id: '#/members',
             type: 'array',
             title: 'An array of items',
+            description: '',
             items: {
                 $id: '#/members/items',
                 type: 'string',
                 default: '',
                 pattern: '^(.*)$',
                 title: 'A string value',
+                description: '',
                 examples: ['alice']
             }
         });
