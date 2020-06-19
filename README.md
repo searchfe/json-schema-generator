@@ -1,6 +1,6 @@
 # JSON Schema Generator
 
-[![Build Status](https://travis-ci.org/harttle/json-schema-generator.svg?branch=master)](https://travis-ci.org/harttle/json-schema-generator)
+[![Build Status](https://travis-ci.com/harttle/json-schema-generator.svg?branch=master)](https://travis-ci.com/harttle/json-schema-generator)
 [![Coverage Status](https://coveralls.io/repos/github/harttle/json-schema-generator/badge.svg?branch=master)](https://coveralls.io/github/harttle/json-schema-generator?branch=master)
 
 Spec: http://json-schema.org/latest/json-schema-validation.html
@@ -14,7 +14,7 @@ npm install --save jsg07
 ## Usage
 
 ```javascript
-const jsg = require('jsg');
+const jsg = require('jsg07');
 
 let schema = jsg.infer({
     name: 'Mike',
