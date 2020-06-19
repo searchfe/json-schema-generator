@@ -1,6 +1,6 @@
 {
   "name": "jsg07",
-  "version": "1.0.2",
+  "version": "0.0.0-development",
   "description": "JSON Schema Generator with draft 07 support",
   "main": "dist/jsg07.common.js",
   "browser": "dist/jsg07.min.js",
@@ -10,11 +10,12 @@
     "dist": "rollup -c && ls -lh dist",
     "postversion": "git push && git push --tags",
     "test": "NODE_ENV=test nyc --reporter=html mocha test/",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harttle/json-schema-generator.git"
+    "url": "https://github.com/harttle/json-schema-generator.git"
   },
   "author": "pearl",
   "license": "MIT",
