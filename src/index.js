@@ -38,6 +38,14 @@ export const specFor = {
             examples: [data]
         };
     },
+    'number': function (data) {
+        return {
+            title: 'A number value',
+            description: '',
+            default: 0,
+            examples: [data]
+        };
+    },
     'string': function (data) {
         return {
             title: 'A string value',
