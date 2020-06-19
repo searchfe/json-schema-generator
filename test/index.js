@@ -21,8 +21,7 @@ describe('infer', function () {
         });
     });
     it('should infer simple object', function () {
-        expect(infer({name: 'harttle', age: 16, heightInMeters: 1.67}, {title: 'Harttle Schema'}))
-        .to.deep.equal({
+        expect(infer({name: 'harttle', age: 16, heightInMeters: 1.67}, {title: 'Harttle Schema'})).to.deep.equal({
             $schema: 'http://json-schema.org/draft-07/schema#',
             $id: 'http://example.org/root.json#',
             definitions: {},

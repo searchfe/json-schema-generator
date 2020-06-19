@@ -1,12 +1,23 @@
 language: node_js
 sudo: required
 dist: trusty
-node_js:
-  - lts/*
+node_js: 12
 cache:
   directories:
     - "node_modules"
-script:
-  - npm run lint
-  - npm run test
-  - npm run coveralls
+jobs:
+  include:
+    - stage: test
+      name: 'Linting'
+      script: npm run lint
+    - name: 'Coverage'
+      script:
+        - npm run test
+        - npm run coveralls
+    - stage: release
+      name: 'Publish'
+      if: branch = master
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npx semantic-release
