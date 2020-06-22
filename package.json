@@ -1,6 +1,6 @@
 {
   "name": "jsg07",
-  "version": "0.0.0-development",
+  "version": "1.0.3",
   "description": "JSON Schema Generator with draft 07 support",
   "main": "dist/jsg07.common.js",
   "browser": "dist/jsg07.min.js",
