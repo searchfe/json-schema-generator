@@ -1,6 +1,6 @@
 export const specFor = {
     'object': function (data, {$id, title}) {
-        let keys = Object.keys(data);
+        let keys = Object.keys(data || {});
         let schema = {
             title: title || 'An object value',
             description: '',

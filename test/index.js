@@ -58,6 +58,44 @@ describe('infer', function () {
             }
         });
     });
+    it('should infer object ', function () {
+        expect(infer({name: 'harttle', age: 16, hobbies: null}, {title: 'Harttle Schema'})).to.deep.equal({
+            $schema: 'http://json-schema.org/draft-07/schema#',
+            $id: 'http://example.org/root.json#',
+            definitions: {},
+            type: 'object',
+            title: 'Harttle Schema',
+            description: '',
+            required: ['name', 'age', 'hobbies'],
+            properties: {
+                name: {
+                    $id: '#/properties/name',
+                    type: 'string',
+                    title: 'A string value',
+                    description: '',
+                    pattern: '^(.*)$',
+                    examples: ['harttle'],
+                    default: ''
+                },
+                age: {
+                    $id: '#/properties/age',
+                    type: 'integer',
+                    title: 'An integer value',
+                    description: '',
+                    default: 0,
+                    examples: [16]
+                },
+                hobbies: {
+                    $id: '#/properties/hobbies',
+                    type: 'object',
+                    title: 'An object value',
+                    description: '',
+                    required: [],
+                    properties: {}
+                }
+            }
+        });
+    });
 });
 
 describe('spec', function () {
@@ -69,6 +107,16 @@ describe('spec', function () {
             description: '',
             default: false,
             examples: [false]
+        });
+    });
+    it('should spec null', function () {
+        expect(spec(null, {$id: '#/nullObject'})).to.deep.equal({
+            title: 'An object value',
+            description: '',
+            required: [],
+            properties: {},
+            $id: '#/nullObject',
+            type: 'object'
         });
     });
     it('should spec string', function () {
@@ -90,6 +138,16 @@ describe('spec', function () {
             description: '',
             default: 0,
             examples: [1.67]
+        });
+    });
+    it('should spec integer', function () {
+        expect(spec(16, {$id: '#/age'})).to.deep.equal({
+            $id: '#/age',
+            type: 'integer',
+            title: 'An integer value',
+            description: '',
+            default: 0,
+            examples: [16]
         });
     });
     it('should spec array', function () {
