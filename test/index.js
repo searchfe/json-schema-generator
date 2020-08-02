@@ -1,6 +1,5 @@
 import {typeOf, infer, spec} from '../src/index.js';
-// import {expect} from 'chai';
-import pkg from 'chai'; const { expect } = pkg;
+import {expect} from 'chai';
 
 describe('typeOf', function () {
     it('should detect boolean', function () {
