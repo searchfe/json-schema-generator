@@ -1,5 +1,6 @@
 import {typeOf, infer, spec} from '../src/index.js';
-import {expect} from 'chai';
+// import {expect} from 'chai';
+import pkg from 'chai'; const { expect } = pkg;
 
 describe('typeOf', function () {
     it('should detect boolean', function () {
@@ -58,7 +59,7 @@ describe('infer', function () {
             }
         });
     });
-    it('should infer object ', function () {
+    it('should infer object that one of it\'s keys is null', function () {
         expect(infer({name: 'harttle', age: 16, hobbies: null}, {title: 'Harttle Schema'})).to.deep.equal({
             $schema: 'http://json-schema.org/draft-07/schema#',
             $id: 'http://example.org/root.json#',
