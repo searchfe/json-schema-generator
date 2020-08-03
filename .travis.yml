@@ -3,8 +3,7 @@ sudo: required
 dist: trusty
 node_js: 12
 cache:
-  directories:
-    - "node_modules"
+  npm: false
 jobs:
   include:
     - stage: test
