@@ -20,8 +20,8 @@ const input = 'src/index.js';
 
 const babelConf = {
     babelrc: false,
-    presets: [['env', { modules: false }]],
-    plugins: ['external-helpers']
+    presets: [['@babel/env', { modules: false }]],
+    plugins: ['@babel/plugin-external-helpers']
 };
 
 export default [{
